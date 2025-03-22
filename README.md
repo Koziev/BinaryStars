@@ -18,4 +18,11 @@ The output of this project is a [table](binary_systems.md) listing the identifie
 4. **Star Identifiers**: The names of the stars, as resolved using the [Simbad catalog](https://aas.aanda.org/articles/aas/pdf/2000/07/ds1821.pdf).
 5. **Sky Image**: A link to an image of the sky region centered approximately on the binary system, providing a visual representation of the pair. [NASA SkyView](https://skyview.gsfc.nasa.gov) is used to create these links.
 
+### Example images
+
+**Eta Cassiopeiae** denoted in the tables as `* eta Cas`
+![Eta Cassiopea](https://skyview.gsfc.nasa.gov/current/cgi/runquery.pl?Survey=DSS&Position=12.2832,57.8142&Size=1.0411&Pixels=256&Return=JPEG)
+
+
+
    
