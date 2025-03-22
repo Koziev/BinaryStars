@@ -1,4 +1,4 @@
-# BinaryStars
+# Binary Stars
 
 ## Searching for Visual Binaries Using Gaia Data
 
@@ -45,5 +45,15 @@ To make the data retrieval process scalable, the celestial sphere was divided in
 - **Acceleration with KD-Tree**: To achieve efficient nearest-neighbor searches, a [KD-Tree](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KDTree.html) data structure is employed. This reduces the search complexity significantly, enabling rapid identification of potential binary star systems.
 
 
+## Possible Improvements
 
-   
+### 1. Refinement of Proper Motion Analysis
+The current implementation identifies candidate binary star systems by estimating the difference in their **proper motion vectors**. If this difference exceeds a certain threshold, the pair is discarded, assuming they are either unrelated stars passing nearby or affected by instrumental measurement errors. However, the threshold value for proper motion differences is currently arbitrary. A **more rigorous selection of this threshold**, potentially based on statistical analysis or machine learning techniques, could significantly improve the **recall** of the algorithm, ensuring that more true binary systems are correctly identified.
+
+### 2. Enhanced Image Generation
+When generating links to sky images, the **scale parameter** (field of view) is not always optimized, often resulting in an excessively large field of view that dilutes the visual representation of the binary system. To address this:
+- **Dynamic Scaling**: Implement a dynamic scaling algorithm to adjust the field of view based on the physical separation of the stars.
+- **Star Annotation**: Enhance the images by programmatically marking the positions of the candidate stars. This would require downloading the image and overlaying annotations, such as circles or labels, to highlight the stars of interest.
+
+### 3. Alternative Approaches
+The current method relies on spatial proximity and proper motion analysis to identify binary star candidates. However, more sophisticated approaches can be explored to improve detection accuracy. For example, the techniques described in [Gaia DR3 Detectability of Unresolved Binary Systems](https://arxiv.org/html/2404.14127v1) leverage advanced statistical and machine learning methods to identify unresolved binary systems in Gaia data. Incorporating such approaches could enhance the robustness and precision of the search algorithm, particularly for systems where traditional methods may fall short.
