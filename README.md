@@ -56,4 +56,8 @@ When generating links to sky images, the **scale parameter** (field of view) is 
 - **Star Annotation**: Enhance the images by programmatically marking the positions of the candidate stars. This would require downloading the image and overlaying annotations, such as circles or labels, to highlight the stars of interest.
 
 ### 3. Alternative Approaches
-The current method relies on spatial proximity and proper motion analysis to identify binary star candidates. However, more sophisticated approaches can be explored to improve detection accuracy. For example, the techniques described in [Gaia DR3 Detectability of Unresolved Binary Systems](https://arxiv.org/html/2404.14127v1) leverage advanced statistical and machine learning methods to identify unresolved binary systems in Gaia data. Incorporating such approaches could enhance the robustness and precision of the search algorithm, particularly for systems where traditional methods may fall short.
+The current method relies on spatial proximity and proper motion analysis to identify binary star candidates. However, more sophisticated approaches can be explored to improve detection accuracy. For example, the techniques described in [Gaia DR3 Detectability of Unresolved Binary Systems](https://arxiv.org/html/2404.14127v1) or [Binaries masses and luminosities with Gaia DR3](https://arxiv.org/abs/2307.16719). leverage advanced statistical and machine learning methods to identify unresolved binary systems in Gaia data. Incorporating such approaches could enhance the robustness and precision of the search algorithm, particularly for systems where traditional methods may fall short.
+
+### 4. Cross-validation
+
+Use available catalogues like [J/A+A/546/A69](https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=J/A+A/546/A69) for threshold tuning and cross-validation.
