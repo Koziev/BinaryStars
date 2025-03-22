@@ -120,47 +120,10 @@ def query_star_name(ra, dec):
         return 'n/a'
 
 
-
-# for row in table1:
-#     ra = float(row['_RA'])
-#     dec = float(row['_DE'])
-#
-#     # These values represent the smallest angular separations that Gaia can resolve in its measurements of right ascension and declination.
-#     # Resolution in RA: ~2.78 × 10⁻⁵ degrees (at the equator).
-#     # Resolution in Dec: ~2.78 × 10⁻⁵ degrees.
-#     patch_size = 1e-3
-#     ra_min = ra - patch_size
-#     ra_max = ra + patch_size
-#     dec_min = dec - patch_size
-#     dec_max = dec + patch_size
-#
-#     # Define the query to retrieve star data
-#     query = f"""
-#     SELECT source_id, non_single_star, ra, dec, parallax, parallax_error, phot_g_mean_mag, pmra, pmdec --, phot_bp_mean_mag, phot_rp_mean_mag
-#     FROM gaiadr3.gaia_source
-#     WHERE ra >= {ra_min} AND ra <= {ra_max}
-#           AND dec >= {dec_min} AND dec <= {dec_max}
-#     """
-#
-#     # Execute the query
-#     job = Gaia.launch_job(query)
-#
-#     # Retrieve the results as an Astropy Table
-#     patch_stars = job.get_results()
-#     if len(patch_stars) > 0:
-#         print('-'*10 + ' HIT ' + '-'*10)
-#
-#
-#         print('DEBUG@82')
-#
-# exit(0)
-
-
 stars_db_fp = 'gaia_data.sqlite'
 patches_db = sqlitedict.SqliteDict(stars_db_fp, tablename='PATCHES')
 stars_db = sqlitedict.SqliteDict(stars_db_fp, tablename='GAIA')
 star_names_db = sqlitedict.SqliteDict(stars_db_fp, tablename='STAR_NAMES')
-star_names_db.clear()
 
 distances = []
 
